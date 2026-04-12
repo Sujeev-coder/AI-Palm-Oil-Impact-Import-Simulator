@@ -1,0 +1,50 @@
+{
+  "datasetRole": "dashboard data",
+  "separationNotes": [
+    "This file documents only the observed historical dashboard dataset.",
+    "Forecast model training data is maintained separately in server/data/forecastTrainingDataset.csv.",
+    "Policy assumptions are maintained separately in server/data/policyAssumptions.json."
+  ],
+  "historicalData": [
+    {
+      "field": "import_volume_tonnes",
+      "source": "WITS / World Bank trade data for India imports of HS 151110 (Crude palm oil)",
+      "url": "https://wits.worldbank.org/trade/comtrade/en/country/IND/year/2024/tradeflow/Imports/partner/ALL/product/151110",
+      "notes": "Same WITS page pattern was used for each year from 2017 to 2024."
+    },
+    {
+      "field": "import_value_usd_million",
+      "source": "WITS / World Bank trade value for India imports of HS 151110 (Crude palm oil)",
+      "url": "https://wits.worldbank.org/trade/comtrade/en/country/IND/year/2024/tradeflow/Imports/partner/ALL/product/151110",
+      "notes": "Stored as USD million converted from WITS trade value in thousand USD."
+    },
+    {
+      "field": "domestic_production_tonnes",
+      "source": "USDA FAS IPAD India Palm Oil Area, Yield and Production",
+      "url": "https://ipad.fas.usda.gov/countrysummary/Default.aspx?crop=Palm+Oil&id=IN",
+      "notes": "Mapped from the USDA marketing year beginning in the listed calendar year, e.g. 2024 = 2024/2025."
+    },
+    {
+      "field": "cultivated_area_ha",
+      "source": "USDA FAS IPAD India Palm Oil Area, Yield and Production",
+      "url": "https://ipad.fas.usda.gov/countrysummary/Default.aspx?crop=Palm+Oil&id=IN",
+      "notes": "Converted from thousand hectares to hectares."
+    },
+    {
+      "field": "avg_import_price_usd_per_tonne",
+      "source": "Derived",
+      "url": "https://wits.worldbank.org/trade/comtrade/en/country/IND/year/2024/tradeflow/Imports/partner/ALL/product/151110",
+      "notes": "Calculated as import_value_usd_million * 1000000 / import_volume_tonnes."
+    },
+    {
+      "field": "import_dependency",
+      "source": "Derived",
+      "notes": "Calculated as imports / (imports + domestic production) * 100."
+    },
+    {
+      "field": "self_reliance",
+      "source": "Derived",
+      "notes": "Calculated as domestic production / (imports + domestic production) * 100."
+    }
+  ]
+}

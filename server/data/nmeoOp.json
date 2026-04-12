@@ -1,0 +1,30 @@
+{
+  "mission_name": "National Mission on Edible Oils - Oil Palm (NMEO-OP)",
+  "launched": 2021,
+  "target_year": 2026,
+  "targets": {
+    "area_plantation_lakh_ha": 6.5,
+    "cpo_production_lakh_mt": 11.2,
+    "crude_palm_oil_target_mt": 1120000
+  },
+  "actuals_2024": {
+    "area_planted_lakh_ha": 1.29,
+    "cpo_production_lakh_mt": 3.05,
+    "area_progress_pct": 19.8,
+    "production_progress_pct": 27.2
+  },
+  "focus_states": [
+    "North-East region",
+    "Andaman and Nicobar Islands"
+  ],
+  "sources": [
+    {
+      "name": "PIB Cabinet approval for NMEO-OP",
+      "url": "https://www.pib.gov.in/pressrelesedetailm.aspx?prid=1746943"
+    },
+    {
+      "name": "USDA FAS India Palm Oil Area, Yield and Production",
+      "url": "https://ipad.fas.usda.gov/countrysummary/Default.aspx?crop=Palm+Oil&id=IN"
+    }
+  ]
+}

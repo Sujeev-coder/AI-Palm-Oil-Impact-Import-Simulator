@@ -1,0 +1,36 @@
+{
+  "files": [
+    {
+      "path": "server/data/dashboardDataset.csv",
+      "role": "dashboard data",
+      "description": "Observed historical series used directly by the dashboard UI and KPI calculations.",
+      "years": "2017-2024"
+    },
+    {
+      "path": "server/data/dashboardSources.json",
+      "role": "dashboard data sources",
+      "description": "Field-level citations and derivation notes for dashboard metrics."
+    },
+    {
+      "path": "server/data/forecastTrainingDataset.csv",
+      "role": "forecast training data",
+      "description": "Training dataset for forecasting, extended back to 2005 and enriched with external driver variables.",
+      "years": "2005-2024"
+    },
+    {
+      "path": "server/data/forecastTrainingSources.json",
+      "role": "forecast training sources",
+      "description": "Field-level citations and notes for the forecast dataset and external drivers."
+    },
+    {
+      "path": "server/data/policyAssumptions.json",
+      "role": "policy assumptions data",
+      "description": "Baseline simulator assumptions, scenario ranges, and documented driver definitions for policy experiments."
+    },
+    {
+      "path": "server/data/nmeoOp.json",
+      "role": "programme metadata",
+      "description": "Reference metadata for NMEO-OP targets and policy context."
+    }
+  ]
+}

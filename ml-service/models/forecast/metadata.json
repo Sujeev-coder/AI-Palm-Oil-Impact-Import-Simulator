@@ -1,0 +1,223 @@
+{
+  "dataset_path": "C:\\Users\\sujee\\Desktop\\AI Palm Oil Simulator\\server\\data\\forecastTrainingDataset.csv",
+  "years": [
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "targets": [
+    "import_volume_tonnes",
+    "import_value_usd_million",
+    "domestic_production_tonnes",
+    "cultivated_area_ha"
+  ],
+  "training_rows": 20,
+  "target_training_rows": {
+    "import_volume_tonnes": 12,
+    "import_value_usd_million": 8,
+    "domestic_production_tonnes": 12,
+    "cultivated_area_ha": 10
+  },
+  "selection_method": "rolling-validation-mae-with-extrapolation-stability",
+  "assignment_policy": "Forecast API uses forecast-safe models chosen by rolling MAE plus extrapolation stability. Tree models are still reported for in-range pattern fitting but are not preferred for final future extrapolation.",
+  "candidates": [
+    "arima",
+    "elasticnet",
+    "linear",
+    "poly2_ridge",
+    "poly3_ridge",
+    "random_forest",
+    "sarimax",
+    "xgboost"
+  ],
+  "selected_models": {
+    "import_volume_tonnes": "poly3_ridge",
+    "import_value_usd_million": "arima",
+    "domestic_production_tonnes": "arima",
+    "cultivated_area_ha": "arima"
+  },
+  "best_pattern_fit_models": {
+    "import_volume_tonnes": "random_forest",
+    "import_value_usd_million": "xgboost",
+    "domestic_production_tonnes": "xgboost",
+    "cultivated_area_ha": "arima"
+  },
+  "validation_mae": {
+    "import_volume_tonnes": {
+      "arima": 571252.6438,
+      "elasticnet": 667388.1225,
+      "linear": 683997.429,
+      "poly2_ridge": 621598.5643,
+      "poly3_ridge": 565623.3621,
+      "random_forest": 335720.1387,
+      "sarimax": 489999.1592,
+      "xgboost": 441460.625
+    },
+    "import_value_usd_million": {
+      "arima": 1241.5252,
+      "elasticnet": 1791.6077,
+      "linear": 1809.5144,
+      "poly2_ridge": 1735.9149,
+      "poly3_ridge": 1669.8818,
+      "random_forest": 1427.5884,
+      "sarimax": 3617.8704,
+      "xgboost": 732.0433
+    },
+    "domestic_production_tonnes": {
+      "arima": 10160.9049,
+      "elasticnet": 19293.3543,
+      "linear": 20105.5556,
+      "poly2_ridge": 17198.6471,
+      "poly3_ridge": 14572.9461,
+      "random_forest": 21858.5142,
+      "sarimax": 20036.7216,
+      "xgboost": 8351.0781
+    },
+    "cultivated_area_ha": {
+      "arima": 3282.3586,
+      "elasticnet": 3672.5425,
+      "linear": 3646.8254,
+      "poly2_ridge": 3772.0554,
+      "poly3_ridge": 3882.5879,
+      "random_forest": 9314.3542,
+      "sarimax": 3936.5317,
+      "xgboost": 3763.8789
+    }
+  },
+  "extrapolation_stability": {
+    "import_volume_tonnes": {
+      "arima": 0.000641,
+      "elasticnet": 1e-05,
+      "linear": 0.0,
+      "poly2_ridge": 9e-06,
+      "poly3_ridge": 1.8e-05,
+      "random_forest": 0.0,
+      "sarimax": 0.004422,
+      "xgboost": 0.0
+    },
+    "import_value_usd_million": {
+      "arima": 0.000102,
+      "elasticnet": 1.6e-05,
+      "linear": 0.0,
+      "poly2_ridge": 1.5e-05,
+      "poly3_ridge": 2.9e-05,
+      "random_forest": 0.0,
+      "sarimax": 0.006272,
+      "xgboost": 0.0
+    },
+    "domestic_production_tonnes": {
+      "arima": 0.000177,
+      "elasticnet": 1e-05,
+      "linear": 0.0,
+      "poly2_ridge": 9e-06,
+      "poly3_ridge": 1.8e-05,
+      "random_forest": 0.0,
+      "sarimax": 0.005048,
+      "xgboost": 0.0
+    },
+    "cultivated_area_ha": {
+      "arima": 3e-06,
+      "elasticnet": 6e-06,
+      "linear": 0.0,
+      "poly2_ridge": 6e-06,
+      "poly3_ridge": 1.1e-05,
+      "random_forest": 0.0,
+      "sarimax": 0.003381,
+      "xgboost": 0.0
+    }
+  },
+  "avg_interval_width": {
+    "import_volume_tonnes": {
+      "arima": 3875656.589,
+      "elasticnet": 3806466.5682,
+      "linear": 3806261.0371,
+      "poly2_ridge": 3811201.2187,
+      "poly3_ridge": 3823744.1185,
+      "random_forest": 2095047.4959,
+      "sarimax": 3938306.1204,
+      "xgboost": 11922.25
+    },
+    "import_value_usd_million": {
+      "arima": 6299.3809,
+      "elasticnet": 5074.732,
+      "linear": 5074.4909,
+      "poly2_ridge": 5096.6486,
+      "poly3_ridge": 5151.049,
+      "random_forest": 4582.1165,
+      "sarimax": 4700.6079,
+      "xgboost": 7.305
+    },
+    "domestic_production_tonnes": {
+      "arima": 99313.0687,
+      "elasticnet": 74472.9418,
+      "linear": 74423.3088,
+      "poly2_ridge": 75111.8824,
+      "poly3_ridge": 76790.6665,
+      "random_forest": 62538.342,
+      "sarimax": 113747.0005,
+      "xgboost": 699.5312
+    },
+    "cultivated_area_ha": {
+      "arima": 34361.2788,
+      "elasticnet": 26024.6973,
+      "linear": 26021.8321,
+      "poly2_ridge": 26065.6194,
+      "poly3_ridge": 26175.9678,
+      "random_forest": 24199.5081,
+      "sarimax": 34722.7347,
+      "xgboost": 74.0508
+    }
+  },
+  "forecast_selection_score": {
+    "import_volume_tonnes": {
+      "arima": 0.336695,
+      "elasticnet": 0.640725,
+      "linear": 0.7,
+      "poly2_ridge": 0.475486,
+      "poly3_ridge": 0.274092,
+      "sarimax": 0.3
+    },
+    "import_value_usd_million": {
+      "arima": 0.004872,
+      "elasticnet": 0.162781,
+      "linear": 0.167313,
+      "poly2_ridge": 0.146358,
+      "poly3_ridge": 0.127583,
+      "sarimax": 1.0
+    },
+    "domestic_production_tonnes": {
+      "arima": 0.010543,
+      "elasticnet": 0.643397,
+      "linear": 0.7,
+      "poly2_ridge": 0.495943,
+      "poly3_ridge": 0.311653,
+      "sarimax": 0.995155
+    },
+    "cultivated_area_ha": {
+      "arima": 0.000304,
+      "elasticnet": 0.41805,
+      "linear": 0.389999,
+      "poly2_ridge": 0.524519,
+      "poly3_ridge": 0.643275,
+      "sarimax": 1.0
+    }
+  },
+  "model_report_file": "C:\\Users\\sujee\\Desktop\\AI Palm Oil Simulator\\ml-service\\models\\forecast\\model_metrics_report.json"
+}

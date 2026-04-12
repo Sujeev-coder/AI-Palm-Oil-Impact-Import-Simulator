@@ -1,0 +1,80 @@
+{
+  "dataset": "Forecast training dataset",
+  "separation_notes": [
+    "This dataset is separate from the dashboard dataset so the dashboard remains a clean observed-data view while forecast training can include older history and external drivers.",
+    "Missing values are allowed for target columns in older years where source-backed series were not yet integrated; the trainer drops missing rows per target.",
+    "Policy assumptions are kept in a separate file at server/data/policyAssumptions.json so scenario settings do not get mixed into observed data."
+  ],
+  "fields": [
+    {
+      "field": "import_volume_tonnes",
+      "source": "USDA FAS GAIN India Oilseeds and Products Update reports for older years and WITS / World Bank for 2017 onward",
+      "notes": "2013-2016 values use USDA report tables. 2017 onward follows the WITS series already used by the dashboard."
+    },
+    {
+      "field": "import_value_usd_million",
+      "source": "WITS / World Bank trade data for India imports of HS 151110 (Crude palm oil)",
+      "notes": "Available from 2017 onward in this training dataset and stored as USD million."
+    },
+    {
+      "field": "domestic_production_tonnes",
+      "source": "USDA FAS IPAD India Palm Oil Area, Yield and Production, with older USDA GAIN table values",
+      "notes": "2013-2014 values use older USDA table values. 2015 onward aligns to the USDA series used in the dashboard."
+    },
+    {
+      "field": "cultivated_area_ha",
+      "source": "USDA FAS IPAD India Palm Oil Area, Yield and Production",
+      "notes": "Available from 2015 onward in this training dataset."
+    },
+    {
+      "field": "exchange_rate_inr_per_usd",
+      "source": "World Bank indicator PA.NUS.FCRF",
+      "url": "https://data.worldbank.org/indicator/PA.NUS.FCRF?locations=IN",
+      "notes": "Official exchange rate (LCU per US$, period average) for India, added for 2005-2024."
+    },
+    {
+      "field": "world_palm_oil_price_usd_per_mt",
+      "source": "World Bank Pink Sheet annual commodity prices",
+      "url": "https://thedocs.worldbank.org/en/doc/18675f1d1639c7a34d463f59263ba0a2-0050012025/world-bank-commodities-price-data-the-pink-sheet",
+      "notes": "Annual nominal world palm oil price, used as a global market driver."
+    },
+    {
+      "field": "world_soybean_oil_price_usd_per_mt",
+      "source": "World Bank Pink Sheet annual commodity prices",
+      "url": "https://thedocs.worldbank.org/en/doc/18675f1d1639c7a34d463f59263ba0a2-0050012025/world-bank-commodities-price-data-the-pink-sheet",
+      "notes": "Competing edible oil benchmark added for substitution pressure analysis."
+    },
+    {
+      "field": "world_fertilizer_index_2010_100",
+      "source": "World Bank Pink Sheet annual commodity indices",
+      "url": "https://thedocs.worldbank.org/en/doc/18675f1d1639c7a34d463f59263ba0a2-0050012025/world-bank-commodities-price-data-the-pink-sheet",
+      "notes": "Annual fertilizer price index (2010 = 100), added as a farm-cost pressure indicator."
+    }
+  ],
+  "citations": [
+    {
+      "name": "USDA FAS IPAD India Palm Oil Area, Yield and Production",
+      "url": "https://ipad.fas.usda.gov/countrysummary/Default.aspx?crop=Palm+Oil&id=IN"
+    },
+    {
+      "name": "USDA FAS GAIN Oilseeds and Products Update, India, October 9 2015",
+      "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Oilseeds+and+Products+Update_New+Delhi_India_10-9-2015.pdf"
+    },
+    {
+      "name": "USDA FAS GAIN Oilseeds and Products Update, India, August 29 2017",
+      "url": "https://apps.fas.usda.gov/newgainapi/api/report/downloadreportbyfilename?filename=Oilseeds+and+Products+Update_New+Delhi_India_8-29-2017.pdf"
+    },
+    {
+      "name": "WITS / World Bank India crude palm oil imports 2024 (same page pattern used for 2017-2024)",
+      "url": "https://wits.worldbank.org/trade/comtrade/en/country/IND/year/2024/tradeflow/Imports/partner/ALL/product/151110"
+    },
+    {
+      "name": "World Bank indicator PA.NUS.FCRF for India exchange rate",
+      "url": "https://data.worldbank.org/indicator/PA.NUS.FCRF?locations=IN"
+    },
+    {
+      "name": "World Bank Commodities Price Data (The Pink Sheet)",
+      "url": "https://thedocs.worldbank.org/en/doc/18675f1d1639c7a34d463f59263ba0a2-0050012025/world-bank-commodities-price-data-the-pink-sheet"
+    }
+  ]
+}
