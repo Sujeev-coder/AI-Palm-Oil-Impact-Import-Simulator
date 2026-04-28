@@ -29,12 +29,8 @@ function AppContent() {
       <header className="bg-gov-green text-white shadow-md z-50 sticky top-0">
         <div className="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-gov-gold flex items-center justify-center font-bold text-gov-green shadow-sm text-sm">
-              GOI
-            </div>
             <div>
-              <h1 className="text-lg font-bold font-serif leading-tight">Ministry of Agriculture</h1>
-              <p className="text-xs text-gov-gold font-medium">Palm Oil Import Impact Simulator</p>
+              <p className="text-lg text-gov-gold font-medium">Palm Oil Import Impact Simulator</p>
             </div>
           </Link>
 
@@ -81,7 +77,6 @@ function AppContent() {
 
       {/* Footer */}
       <footer className="bg-gray-800 text-gray-400 py-6 text-center mt-auto text-sm">
-        <p>© 2026 Ministry of Agriculture & Farmers Welfare, Govt of India.</p>
         <p className="text-xs text-gray-500 mt-1">Powered by XGBoost AI • NMEO-OP Framework</p>
       </footer>
     </div>

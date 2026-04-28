@@ -25,8 +25,7 @@ export default function Landing() {
         <div className="max-w-5xl w-full">
           <div className="glass p-10 md:p-12 rounded-3xl text-center space-y-6 animate-fade-in-up">
             <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-green-100 text-gov-green font-semibold text-sm">
-              <ShieldCheck size={18} />
-              <span>Official Government Portal</span>
+              
             </div>
 
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
