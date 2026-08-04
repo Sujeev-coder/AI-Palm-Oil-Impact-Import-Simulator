@@ -150,7 +150,7 @@ From the project root:
 
 This starts:
 
-- Node backend on `http://localhost:5000`
+- Node backend on `https://ai-palm-oil-impact-import-simulator.onrender.com`
 - Vite frontend on `http://localhost:5173`
 
 ### Option 2: Run Each Service Manually
@@ -189,7 +189,7 @@ http://localhost:5173
 Base URL:
 
 ```text
-http://localhost:5000/api
+https://ai-palm-oil-impact-import-simulator.onrender.com/api
 ```
 
 Main routes:

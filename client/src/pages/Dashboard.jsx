@@ -3,8 +3,8 @@ import {
   LineChart, Line, BarChart, Bar, AreaChart, Area, PieChart, Pie, Cell,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ComposedChart
 } from 'recharts';
-import axios from 'axios';
 import { Package, TrendingUp, DollarSign, Activity, Leaf, MapPin, Target, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+import api from '../lib/api';
 
 const COLORS = ['#1B5E20', '#C9A227', '#E53935', '#1E88E5'];
 
@@ -15,7 +15,7 @@ export default function Dashboard() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('http://localhost:5000/api/dashboard');
+        const response = await api.get('/dashboard');
         setData(response.data);
       } catch (error) {
         console.error('Dashboard data fetch error', error);

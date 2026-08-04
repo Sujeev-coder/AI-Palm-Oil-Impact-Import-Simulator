@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Activity, TrendingUp, BarChart2, ShieldCheck, Leaf, ArrowRight } from 'lucide-react';
-import axios from 'axios';
+import api from '../lib/api';
 
 export default function Landing() {
   const [stats, setStats] = useState(null);
@@ -9,7 +9,7 @@ export default function Landing() {
   useEffect(() => {
     async function fetchStats() {
       try {
-        const res = await axios.get('http://localhost:5000/api/dashboard');
+        const res = await api.get('/dashboard');
         setStats(res.data.kpis);
       } catch (e) { /* silent */ }
     }

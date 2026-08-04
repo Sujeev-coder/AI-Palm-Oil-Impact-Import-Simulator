@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { AlertTriangle, Info, CheckCircle2, Search, Loader2, TrendingUp } from 'lucide-react';
 import {
   BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, ComposedChart
 } from 'recharts';
+import api from '../lib/api';
 
 export default function Insights() {
   const [scenarios, setScenarios] = useState([]);
@@ -17,7 +17,7 @@ export default function Insights() {
   useEffect(() => {
     async function fetchScenarios() {
       try {
-        const response = await axios.get('http://localhost:5000/api/scenarios');
+        const response = await api.get('/scenarios');
         setScenarios(response.data);
       } catch (error) {
         console.error('Error fetching scenarios', error);
@@ -29,7 +29,7 @@ export default function Insights() {
   const findOptimalTariff = async () => {
     setLoadingOptimal(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/optimal-tariff', {
+      const response = await api.post('/optimal-tariff', {
         global_price: 800,
         production_gap: 7500,
         import_volume: 8000,
@@ -46,7 +46,7 @@ export default function Insights() {
   const runForecast = async () => {
     setLoadingForecast(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/forecast', { years_ahead: forecastYears });
+      const response = await api.post('/forecast', { years_ahead: forecastYears });
       setForecastData(response.data);
     } catch (error) {
       console.error('Error running forecast', error);

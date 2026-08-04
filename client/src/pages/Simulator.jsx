@@ -3,8 +3,8 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar
 } from 'recharts';
-import axios from 'axios';
 import { Play, Save, AlertCircle, GitCompare, Calendar, RefreshCw, Globe, Sigma } from 'lucide-react';
+import api from '../lib/api';
 
 export default function Simulator() {
   const [inputs, setInputs] = useState({ tariff: 5.5, global_price: 800, production_gap: 7500, import_volume: 8000 });
@@ -25,7 +25,7 @@ export default function Simulator() {
     setAutoFillStatus((current) => ({ ...current, loading: true }));
 
     try {
-      const response = await axios.get('http://localhost:5000/api/dashboard');
+      const response = await api.get('/dashboard');
       const latest = response.data?.historicalData?.[response.data.historicalData.length - 1];
 
       if (!latest) {
@@ -47,11 +47,11 @@ export default function Simulator() {
     setLoading(true);
     setSaved(false);
     try {
-      const response = await axios.post('http://localhost:5000/api/simulate', inputs);
+      const response = await api.post('/simulate', inputs);
       setResults(response.data);
 
       if (compareMode) {
-        const compareRes = await axios.post('http://localhost:5000/api/simulate', compareInputs);
+        const compareRes = await api.post('/simulate', compareInputs);
         setCompareResults(compareRes.data);
       } else {
         setCompareResults(null);
@@ -66,7 +66,7 @@ export default function Simulator() {
   const handleSave = async () => {
     if (!results) return;
     try {
-      await axios.post('http://localhost:5000/api/save-scenario', {
+      await api.post('/save-scenario', {
         scenarioName: `Scenario - Tariff ${inputs.tariff}%`,
         inputs,
         outputs: results
@@ -289,7 +289,7 @@ function SliderInputs({ inputs, setInputs, accent = 'gov-green', autoFillStatus,
   const fetchLivePrice = async () => {
     setFetchingPrice(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/live-cpo-price');
+      const response = await api.get('/live-cpo-price');
       if (response.data && response.data.price) {
         setInputs({ ...inputs, global_price: response.data.price });
         setPriceStatus({
