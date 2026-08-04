@@ -30,7 +30,7 @@ function AppContent() {
         <div className="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
             <div>
-              <p className="text-lg text-gov-gold font-medium">Palm Oil Import Impact Simulator</p>
+              <p className="text-lg text-gov-gold font-medium">Simulator for Importing Palm Oil</p>
             </div>
           </Link>
 

@@ -1,5 +1,5 @@
 """
-Palm Oil Import Impact Simulator - XGBoost Model Training Script
+Simulator for importing palm oil - XGBoost Model Training Script
 Generates synthetic economic data and trains 3 XGBoost models:
   1. Farmer Income Change predictor
   2. Consumer Price Change predictor

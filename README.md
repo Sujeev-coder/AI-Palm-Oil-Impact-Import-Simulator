@@ -1,4 +1,4 @@
-# AI Palm Oil Import Impact Simulator
+# AI Simulator for importing palm oil
 
 An interactive policy simulation platform for analyzing how palm oil tariff changes can affect farmer income, consumer prices, import dependency, domestic production, and edible-oil self-reliance in India.
 

@@ -298,7 +298,7 @@ async function fetchFreeDailyCpoPrice() {
   const mpocResponse = await axios.get(MPOC_DAILY_PRICE_URL, {
     timeout: 7000,
     headers: {
-      'User-Agent': 'Mozilla/5.0 Palm Oil Import Impact Simulator'
+      'User-Agent': 'Mozilla/5.0 Simulator for importing palm oil'
     }
   });
 

@@ -1,5 +1,5 @@
 """
-Palm Oil Import Impact Simulator API.
+Simulator for importing palm oil API.
 
 - Scenario simulation is rule-based and transparent.
 - Forecasting uses trained forecast-safe models with uncertainty bands.
@@ -18,7 +18,7 @@ import pandas as pd
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="Palm Oil Import Impact Simulator API")
+app = FastAPI(title="Simulator for importing palm oil API")
 
 app.add_middleware(
     CORSMiddleware,

@@ -29,7 +29,7 @@ export default function Landing() {
             </div>
 
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
-              Policy <span className="text-transparent bg-clip-text bg-gradient-to-r from-gov-green to-emerald-600">Import Impact</span> Simulator
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gov-green to-emerald-600">Import Impact</span> Simulator
               <br /> for Palm Oil Tariffs
             </h1>
 
